@@ -1,16 +1,16 @@
 package view;
 
 import java.util.List;
-import model.Email;
+import model.Mail;
 import model.Histogram;
 
-public class EmailHistogramBuilder {
+public class MailHistogramBuilder {
     
-    public static Histogram<String> createHistogram(List<Email> mail){
+    public static Histogram<String> build(List<Mail> mail){
         Histogram<String> histo = new Histogram();
-        for (Email mail1 : mail) {
+        mail.forEach((mail1) -> {
             histo.increment(mail1.getDomain());
-        }
+        });
         return histo;
     }
     

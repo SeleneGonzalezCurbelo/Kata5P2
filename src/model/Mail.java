@@ -2,11 +2,11 @@ package model;
 
 import java.util.regex.Pattern;
 
-public class Email {
+public class Mail {
     
     private final String email;
 
-    public Email(String email){
+    public Mail(String email){
         this.email = email;
     }
 
