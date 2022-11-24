@@ -1,21 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package kata5p2;
+import java.util.List;
+import model.Email;
+import view.HistogramDisplay;
+import model.Histogram;
+import view.EmailHistogramBuilder;
+import view.EmailReader;
 
-/**
- *
- * @author TESTER
- */
 public class Kata5P2 {
-
-    /**
-     * @param args the command line arguments
-     */
+    
+    private static List<Email> emailList;
+    private static Histogram<String> histogram;
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+        String fileName = "email.txt";
+        emailList = EmailReader.read(fileName); 
+        histogram = EmailHistogramBuilder.createHistogram(emailList);
+        new HistogramDisplay(histogram).execute();        
     }
     
 }
